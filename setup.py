@@ -8,5 +8,4 @@ setup(
   packages=['tinsel'],
   license='LICENSE.md',
   description='An Advent of Code utils package',
-  scripts=['bin/aoc'],
 )

@@ -1,5 +1,0 @@
-#!/usr/bin/env python
-
-from tinsel.runner import Runner
-
-Runner().run()
