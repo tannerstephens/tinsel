@@ -1,5 +1,0 @@
-#!/home/trainrex/.pyenv/versions/3.10.4/bin/python3.10
-
-from tinsel.runner import Runner
-
-Runner().run()

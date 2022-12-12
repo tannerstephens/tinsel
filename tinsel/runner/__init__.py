@@ -16,6 +16,7 @@ class Runner:
     self.days = self._load_all_days()
 
   def _load_all_days(self):
+    sys.path.append(str(self.directory))
     days = {}
 
     for day_path in self.directory.glob('day*'):
@@ -80,8 +81,6 @@ class Runner:
   def create_from_template(self, n):
     class_path = path.dirname(path.abspath(__file__))
 
-    breakpoint()
-
     copytree(f'{class_path}/day_template', f'{self.directory}/day{n}')
 
   def create_day(self, n):
@@ -113,5 +112,5 @@ class Runner:
       latest_day = max(self.days.keys(), key=int)
       self.run_day(latest_day)
 
-if __name__ == '__main__':
+def main():
   Runner().run()
