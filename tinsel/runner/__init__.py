@@ -79,9 +79,13 @@ class Runner:
     print(f'Average Part Time: {average_part} ms')
 
   def create_from_template(self, n):
-    class_path = path.dirname(path.abspath(__file__))
+    day_path = self.directory / f'day{n}'
 
-    copytree(f'{class_path}/day_template', f'{self.directory}/day{n}')
+    template_path = Path(__file__).parent / 'day_template'
+
+    copytree(template_path, day_path)
+
+    open(day_path / 'input', 'w').close()
 
   def create_day(self, n):
     if n in self.days:
